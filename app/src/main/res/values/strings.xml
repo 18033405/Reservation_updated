@@ -2,5 +2,13 @@
     <string name="app_name">Reservation</string>
     <string name="display_Date">Reservation</string>
     <string name="display_time">Reservation</string>
+    <string name="btnReset1">Reservation</string>
+    <string name="Confirmation">Reservation</string>
+
+
+
+
+
+
 
 </resources>

@@ -6,11 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+
+
+public class MainActivity extends AppCompatActivity   {
     DatePicker dp;
     TimePicker tp;
     Button btnDisplayDate;
@@ -19,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     TextView tvDisplay;
     Button btnReset;
     CheckBox cbEnabled;
+    CheckBox cbEnabled1;
+    EditText name;
+    EditText mobile_number;
+    EditText size;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +35,24 @@ public class MainActivity extends AppCompatActivity {
         btnDisplayDate=findViewById(R.id.buttonDisplayDate);
         btnDisplayTime=findViewById(R.id.buttonDisplayTime);
         tvDisplay=findViewById(R.id.textViewDisplay);
-        btnReset=findViewById(R.id.btnReset);
+        btnReset=findViewById(R.id.btnReset1);
         cbEnabled=findViewById(R.id.checkBoxsmoke);
-        cbEnabled=findViewById(R.id.checkBoxnosmoke);
+        cbEnabled1=findViewById(R.id.checkBoxnosmoke);
         btnconfirmation=findViewById(R.id.btnConfirmation);
+        name=findViewById(R.id.editText);
+        mobile_number=findViewById(R.id.editText2);
+        size=findViewById(R.id.editText3);
+
+
+
+
+
+
+
+
+
+
+
         btnDisplayTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
                 int hour = tp.getCurrentHour();
                 int minute = tp.getCurrentMinute();
+
+
                 String time = hour + ":" + minute;
 
 
@@ -67,10 +90,18 @@ public class MainActivity extends AppCompatActivity {
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 tp.setCurrentHour(5);
-                dp.updateDate(2019, 6, 1);
-
-
+                dp.updateDate(2019, 5, 1);
+                name.getText().clear();
+                mobile_number.setText("");
+                size.setText("");
+                if (cbEnabled.isChecked()) {
+                    cbEnabled.setChecked(false);
+                }
+                if (cbEnabled1.isChecked()) {
+                    cbEnabled1.setChecked(false);
+                }
             }
         });
 
